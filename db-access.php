@@ -16,9 +16,9 @@ function connectToDB(string $db): PDO
 
   try {
     $dbConnection = new PDO($dataSourceName, $user, $pass, $options);
-    } catch (PDOException $excptn) {
+  } catch (PDOException $excptn) {
     throw new PDOException($excptn->getMessage(), (int)$excptn->getCode());
-    }
+  }
 
   return $dbConnection;
 }

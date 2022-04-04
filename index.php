@@ -8,13 +8,12 @@ require_once 'collection-loop.php';
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="CSS/normalize.css" rel="stylesheet">	
-	<link href="CSS/styles.css" rel="stylesheet">	
-	<title>Vino Vero</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="CSS/normalize.css" rel="stylesheet">	
+  <link href="CSS/styles.css" rel="stylesheet">	
+  <title>Vino Vero</title>
 </head>
-
 
 <body>
 <?php

@@ -25,7 +25,6 @@ h2 a {
 .h2 a:hover {
   background-image: linear-gradient(270deg,#fcfcfd 0%,#fcfcfd 50%, #264de4 50%, #264de4 100%);
 }
-    
 
 #test-flex {
   display: flex;
