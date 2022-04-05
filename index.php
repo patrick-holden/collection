@@ -36,7 +36,8 @@ $result = fetchAllWines(connectToDB($db));
     </a>
   </h2>
   <div  id="test-flex">
-    <?php loopCollection($result); ?>
+    <?php 
+      echo loopCollection($result); ?>
   </div>
 </section>
 </body>
