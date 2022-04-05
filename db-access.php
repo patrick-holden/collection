@@ -62,7 +62,8 @@ function fetchAllWines(PDO $dbConnection): array
        JOIN `junc_region`
        ON `wines`.`id` = `junc_region`.`wines_id`
        JOIN `region_country`
-       ON `junc_region`.`region_id` = `region_country`.`id`;';
+       ON `junc_region`.`region_id` = `region_country`.`id`
+       ORDER BY `wines`.`id`;';
 
   return fetchAll($dbConnection, $sql);
 }
