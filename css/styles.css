@@ -1,7 +1,9 @@
-html {box-sizing: border-box;}
+html {
+  box-sizing: border-box;
+}
 
 *, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -15,6 +17,7 @@ body {
 #collected {
   font-size: 1.5rem;
 }
+
 h2 a {
   font-size: 1.75rem;
   text-decoration: none;
@@ -61,4 +64,3 @@ h2 a {
 .test:hover .content-overlay {
   opacity: 0.8;
 }
-    
