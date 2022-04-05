@@ -1,7 +1,8 @@
 
 <?php
-function loopCollection($result)
+function loopCollection(array $result): string
 {
+  $collectedwine = '';
   for ($i=0; $i < count($result); $i++)
   {
     $currentId = $result[$i]['id'];
@@ -16,7 +17,7 @@ function loopCollection($result)
       $nextId = $result[$i + 1]['id'];
       }
 
-    $collectedwine =
+    $collectedwine .=
       '<div class="test">
         <a href="" target="_blank">
           <div class="content-overlay">
@@ -33,8 +34,8 @@ function loopCollection($result)
           </div>
         </a>
       </div>';
-    echo $collectedwine;
-  }    
+  } 
+  return $collectedwine;
 }
 
 ?>
