@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Source+Sans+Pro:wght@400;600&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -18,16 +20,17 @@ body {
   font-size: 1.5rem;
 }
 
-h2 a {
+h2 {
   font-size: 1.75rem;
+  padding-left: 2rem;
   text-decoration: none;
   color: #00ccff;
-  transition: all 3s ease-in-out 1s;
+  transition: all 1.5s ease-in-out 1s;
 }
 
-.h2 a:hover {
-  background-image: linear-gradient(270deg,#fcfcfd 0%,#fcfcfd 50%, #264de4 50%, #264de4 100%);
-}
+/*.h2 a:hover {*/
+/*  background-image: linear-gradient(270deg,#fcfcfd 0%,#fcfcfd 50%, #264de4 50%, #264de4 100%);*/
+/*}*/
 
 #test-flex {
   display: flex;
@@ -39,28 +42,125 @@ h2 a {
   padding-top: 2rem;
 }
 
-.test {
+.content {
   position: relative;
   width: 80vw;
+  min-height: 500px;
   object-fit: cover;
  }
 
- .cat {
-  width: auto; 
-  max-width: 100%;
- }
-
 .content-overlay {
-  background: #00ccff;;
+  background: #12879f;
   position: absolute;
   top: 50%;
   bottom: 0;
   left: 0;
   right: 0;
   opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
 }
 
-.test:hover .content-overlay {
-  opacity: 0.8;
+.content:hover .content-overlay {
+  opacity: 1;
+}
+
+.wine-image {
+  width: auto;
+  max-width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(-75%, 0%);
+  -moz-transform: translate(-75%, 0%);
+  transform: translate(-75%, 0%);
+  -webkit-transition: all 0.1s ease-out 0s;
+  -moz-transition: all 0.1s ease-out 0s;
+  transition: all 0.1s ease-out 0s;
+}
+
+.content:hover .content-details {
+  top:30%;
+  left: 75%;
+  opacity: 0.98;
+}
+
+.content-details h3 {
+  color: #da5bda;
+  font-family: source sans pro, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0rem;
+  padding-top: 7.5rem;
+  padding-bottom: 0rem;
+  padding-right: 7.5rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.content-details h4 {
+  font-family: source sans pro, sans-serif;
+  color: #ffc11f;
+  font-weight: 400;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-top: 0.1rem;
+}
+
+.content-details li {
+  list-style-type: none;
+  font-family: 'Roboto Slab', serif;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-left: -10%;
+  padding: 0;
+}
+
+footer {
+  background-color: #00ccff;
+  opacity: 0.6;
+}
+
+/* Styling the Form (Color, Padding, Shadow) */
+/*.form {*/
+/*  background-color: #00ccff;*/
+/*  max-width: 500px;*/
+/*  margin: 50px auto;*/
+/*  padding: 30px 20px;*/
+/*  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);*/
+}
+
+/* Styling form-control Class */
+.form-control {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+/* Styling form-control Radio
+button and Checkbox */
+
+label {
+  margin-right: 0rem;
+  margin-left: 1rem;
+}
+
+/* Styling Button */
+button {
+  background-color: #000000;
+  color: #00ccff;
+  border: 1px solid #777;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 21px;
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
