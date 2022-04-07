@@ -134,7 +134,7 @@ footer {
 form {
 color: #ffffff;
   padding: 30px 20px;
-  box-shadow: 2px 5px 10px #0000007;
+  box-shadow: 2px 5px 10px;
 }
 
 /* Styling form-control Class */

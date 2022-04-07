@@ -48,7 +48,7 @@ $wines = createArrayOfWineObjects($result);
 </body>
 <footer>
     <br>
-  <form id="form" action="add-to-db-func.php" method="post">
+  <form id="form" action="add-to-db-func.php" method="post" enctype="multipart/form-data">
       <div>
         <label for="name">Wine name</label>
         <input name="name" id="name" type="text">
