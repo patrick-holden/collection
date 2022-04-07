@@ -63,7 +63,7 @@ $wines = createArrayOfWineObjects($result);
     <br>
     <div>
       <label for="form-colour">
-        Style(s) - MUST CHOOSE ONE:
+        Style(s):
       </label>
       <br>
       <?php echo displayAllColours($colours); ?>
@@ -71,7 +71,7 @@ $wines = createArrayOfWineObjects($result);
     <br>
     <div id="form-grapes">
       <label for="form-grapes">
-        Grape(s)  - MUST CHOOSE ONE:
+        Grape(s):
       </label>
       <br>
       <?php echo displayAllGrapes($grapes); ?>
