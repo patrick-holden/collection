@@ -108,8 +108,8 @@ function displayAllColours(array $colours): string
 {
   $colourStr = '';
   foreach ($colours as $colour) {
-    $colourStr .= '<label for="colour">' . ucfirst($colour["colour"]) . '</label>
-      <input name="colour[]" id="colour" type="checkbox" value="'
+    $colourStr .= '<label for="colour">' . ucfirst($colour["colour"]) .
+      '</label><input name="colour[]" id="colour" type="checkbox" value="'
       . $colour["id"] . '">';
   }
   return $colourStr;
@@ -119,8 +119,8 @@ function displayAllGrapes(array $grapes): string
 {
   $grapeStr = '';
   foreach ($grapes as $grape) {
-    $grapeStr .= '<label for="grape">' . ucfirst($grape["grape"]) . '</label>
-      <input name="grape[]" id="grape" type="checkbox" value="'
+    $grapeStr .= '<label for="grape">' . ucfirst($grape["grape"]) .
+      '</label><input name="grape[]" id="grape" type="checkbox" value="'
       . $grape["id"] . '">';
   }
   return $grapeStr;
@@ -135,6 +135,3 @@ function displayAllRegions(array $regions): string
   }
   return $regionStr;
 }
-
-?>
-
