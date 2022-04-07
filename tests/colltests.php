@@ -1,94 +1,81 @@
 <?php
-
-require_once '../collection-loop.php';
-// require_once '../db-access.php';
-
+require_once '../display-funcs.php';
 use PHPUnit\Framework\TestCase;
 
 class colltests extends TestCase
 {
-  public function testGivenEmptyArray()
+  public function testDisplayAllGrapes_GivenEmptyArrayReturnEmptyString()
   {
     $array = [];
 
-    $result = loopCollection($array);
+    $result = displayAllGrapes($array);
 
     $this->assertEquals('', $result);
   }
 
-  public function testGivenValidWine()
+  public function testDisplayAllGrapes_GivenArrayReturnString()
   {
-    $array[] = array(
-        'id' => 1,
-        'name' => 'Fave Wine',
-        'blurb' => 'Def my favourite wine',
-        'producer' => 'Italian Wine Man',
-        'image' => 'wine_in_a_glass.jpg',
-        'colour' => 'pink',
-        'grape' => 'gewurtz',
-        'region' => 'Bristol',
-        'country' => 'UK'
-    );
+    $array[] = ['id' => 1, 'grape' => 'riesling'];
+    $expected = '<label for="grape">Riesling</label><input name="grape[]" id="grape" type="checkbox" value="1">';
 
-    $array[] = array(
-      'id' => 1,
-      'name' => 'Fave Wine',
-      'blurb' => 'Def my favourite wine',
-      'producer' => 'Italian Wine Man',
-      'image' => 'wine_in_a_glass.jpg',
-      'colour' => 'pink',
-      'grape' => 'gewurtz',
-      'region' => 'Bristol',
-      'country' => 'UK'
-    );
+    $result = displayAllGrapes($array);
 
-    $result = loopCollection($array);
-
-    $this->assertEquals(
-      '<div class="test">
-        <a href="" target="_blank">
-          <div class="content-overlay">
-          </div>
-          <img class="cat" src="Images/wine_in_a_glass.jpg"/>
-          <div>
-            <h3>Fave Wine</h3>
-            <h4>Producer: Italian Wine Man</h4>
-            <ul>
-              <li>pink</li>
-              <li>gewurtz</li>
-              <li>Bristol UK</li>
-            </ul>
-          </div>
-        </a>
-      </div>
-      <div class="test">
-        <a href="" target="_blank">
-          <div class="content-overlay">
-          </div>
-          <img class="cat" src="Images/wine_in_a_glass.jpg"/>
-          <div>
-            <h3>Fave Wine</h3>
-            <h4>Producer: Italian Wine Man</h4>
-            <ul>
-              <li>pink</li>
-              <li>gewurtz</li>
-              <li>Bristol UK</li>
-            </ul>
-          </div>
-        </a>
-      </div>', $result);
+    $this->assertEquals($expected, $result);
   }
 
-
-  public function testGivenStringThrowError()
+  public function testDisplayAllColours_GivenEmptyArrayReturnEmptyString()
   {
-    //Arrange - setting up the data
+    $array = [];
+
+    $result = displayAllColours($array);
+
+    $this->assertEquals('', $result);
+  }
+
+  public function testDisplayAllColours_GivenArrayReturnString()
+  {
+    $array[] = ['id' => 1, 'colour' => 'white'];
+    $expected = '<label for="colour">White</label><input name="colour[]" id="colour" type="checkbox" value="1">';
+
+    $result = displayAllColours($array);
+
+    $this->assertEquals($expected, $result);
+  }
+
+  public function testDisplayAllRegions_GivenEmptyArrayReturnEmptyString()
+  {
+    $array = [];
+
+    $result = displayAllRegions($array);
+
+    $this->assertEquals('', $result);
+  }
+
+  public function testDisplayAllRegions_GivenArrayReturnString()
+  {
+    $array[] = ['id' => 1, 'region' => 'Bristol', 'country' => 'UK'];
+    $expected = '<option value="1">Bristol, UK</option>';
+
+    $result = displayAllRegions($array);
+
+    $this->assertEquals($expected, $result);
+  }
+
+  public function testCreateArrayOfWineObjects_GivenStringThrowError()
+  {
     $array = 'string';
 
     $this->expectException(TypeError::class);
 
-    //Act - calling the function
-    $result = loopCollection($array);
+    $result = createArrayOfWineObjects($array);
+  }
+
+  public function testDisplayAllWines_GivenStringThrowError()
+  {
+    $array = 'string';
+
+    $this->expectException(TypeError::class);
+
+    $result = displayAllWines($array);
   }
 }
-?>
