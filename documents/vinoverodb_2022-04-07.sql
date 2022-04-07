@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.7.3-MariaDB-1:10.7.3+maria~focal)
 # Database: vinoverodb
-# Generation Time: 2022-04-04 12:51:34 +0000
+# Generation Time: 2022-04-07 15:50:46 +0000
 # ************************************************************
 
 
@@ -29,7 +29,7 @@ CREATE TABLE `colour` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `colour` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `colour` WRITE;
 /*!40000 ALTER TABLE `colour` DISABLE KEYS */;
@@ -43,7 +43,7 @@ VALUES
 	(5,'still'),
 	(6,'spritzy'),
 	(7,'cider'),
-    (8,'sweet');
+	(8,'sweet');
 
 /*!40000 ALTER TABLE `colour` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -95,7 +95,7 @@ CREATE TABLE `junc_colour` (
   `wines_id` int(11) DEFAULT NULL,
   `colour_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `junc_colour` WRITE;
 /*!40000 ALTER TABLE `junc_colour` DISABLE KEYS */;
@@ -121,7 +121,7 @@ VALUES
 	(17,16,3),
 	(18,17,5),
 	(19,17,5),
-    (20,17,7),
+	(20,17,7),
 	(21,12,8),
 	(22,17,5);
 
@@ -241,19 +241,6 @@ VALUES
 
 /*!40000 ALTER TABLE `region_country` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-# Dump of table styles
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `styles`;
-
-CREATE TABLE `styles` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `flavour_body` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 
 # Dump of table wines
