@@ -1,5 +1,5 @@
 <?php
-require_once 'db-access.php';
+require_once 'db-access-funcs.php';
 
 $dB = 'vinoverodb';
 $connection = (connectToDb($dB));

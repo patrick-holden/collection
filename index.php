@@ -1,6 +1,6 @@
 <?php
-require_once 'db-access.php';
-require_once 'collection-loop.php';
+require_once 'db-access-funcs.php';
+require_once 'display-funcs.php';
 $db = 'vinoverodb';
 $result = fetchAllWines(connectToDB($db));
 $colours = fetchAllColours(connectToDB($db));

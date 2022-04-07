@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: #708090;
+  background-color: #000000;
 }
  
 #the {
@@ -75,9 +75,9 @@ h2 {
   padding-right: 1em;
   width: 100%;
   opacity: 0;
-  -webkit-transform: translate(-75%, 0%);
-  -moz-transform: translate(-75%, 0%);
-  transform: translate(-75%, 0%);
+  -webkit-transform: translate(-75%, 50%);
+  -moz-transform: translate(-75%, 50%);
+  transform: translate(-75%, 50%);
   -webkit-transition: all 0.1s ease-out 0s;
   -moz-transition: all 0.1s ease-out 0s;
   transition: all 0.1s ease-out 0s;
@@ -96,11 +96,15 @@ h2 {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   margin-bottom: 0rem;
-  padding-top: 7.5rem;
+  padding-top: 0rem;
   padding-bottom: 0rem;
-  padding-right: 7.5rem;
+  padding-right: 0rem;
   text-align: left;
   text-transform: uppercase;
+  overflow: hidden;
+  max-width: 100ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content-details h4 {
@@ -124,17 +128,16 @@ h2 {
 }
 
 footer {
-  background-color: #00ccff;
-  opacity: 0.6;
+  background-color: #15bbc9;
+  opacity: 0.8;
+  border-top: 4px solid #ffc11f;
+  font-family: source sans pro;
 }
 
-/* Styling the Form (Color, Padding, Shadow) */
-/*.form {*/
-/*  background-color: #00ccff;*/
-/*  max-width: 500px;*/
-/*  margin: 50px auto;*/
-/*  padding: 30px 20px;*/
-/*  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);*/
+form {
+color: #ffffff;
+  padding: 30px 20px;
+  box-shadow: 2px 5px 10px #0000007;
 }
 
 /* Styling form-control Class */
@@ -146,7 +149,8 @@ footer {
 /* Styling form-control Radio
 button and Checkbox */
 
-label {
+li {
+  color: #ffc11f;
   margin-right: 0rem;
   margin-left: 1rem;
 }
@@ -163,4 +167,97 @@ button {
   width: 100%;
   margin-top: 50px;
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 700px) {
+  #test-flex {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 4rem;
+    justify-content: center;
+    border: 1px solid #ffffff;
+    margin-left: 5%;
+    padding-top: 2rem;
+  }
+
+  .content {
+    position: relative;
+    width: 40vw;
+    min-height: 500px;
+    object-fit: cover;
+  }
+
+  .content-overlay {
+    background: #12879f;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.15s ease-in-out 0s;
+  }
+
+  .content:hover .content-overlay {
+    opacity: 1;
+  }
+
+  .wine-image {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .content-details {
+    position: absolute;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    opacity: 0;
+    -webkit-transform: translate(-75%, 0%);
+    -moz-transform: translate(-75%, 0%);
+    transform: translate(-75%, 0%);
+    -webkit-transition: all 0.1s ease-out 0s;
+    -moz-transition: all 0.1s ease-out 0s;
+    transition: all 0.1s ease-out 0s;
+  }
+
+  .content:hover .content-details {
+    top:30%;
+    left: 75%;
+    opacity: 0.98;
+  }
+
+  .content-details h3 {
+    color: #da5bda;
+    font-family: source sans pro, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0rem;
+    padding-top: 7.5rem;
+    padding-bottom: 0rem;
+    padding-right: 7.5rem;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .content-details h4 {
+    font-family: source sans pro, sans-serif;
+    color: #ffc11f;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: left;
+    margin-top: 0.1rem;
+  }
+
+  .content-details li {
+    list-style-type: none;
+    font-family: 'Roboto Slab', serif;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-left: -10%;
+    padding: 0;
+  }
 }
