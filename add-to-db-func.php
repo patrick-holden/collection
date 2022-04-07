@@ -32,13 +32,13 @@ function addToDB($pdo)
   );
 
   for ($i = 0; $i < count($_POST['grape']); $i++) {
+      $existingGrapeId = $_POST['grape'][$i];
 
-    $existingGrapeId = $_POST['grape'][$i];
-
-    $query->execute([
-      'wineId' => $wineId,
-      'existingGrapeId' => $existingGrapeId,
-    ]);
+      $query->execute([
+        'wineId' => $wineId,
+        'existingGrapeId' => $existingGrapeId,
+      ]);
+    }
   }
 
   $query = $pdo->prepare(
@@ -75,5 +75,6 @@ function addToDB($pdo)
 
 echo addToDB($connection);
 header('Location: index.php');
+
 
 ?>

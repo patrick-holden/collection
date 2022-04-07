@@ -66,21 +66,20 @@ $wines = createArrayOfWineObjects($result);
     <br>
       <div>
         <label for="image">Image file:</label>
-        <input name="image" id="image" type="text">
+        <input type="file" name="newFile">
       </div>
       <br>
-      <br>
       <div>
-        <label for="colour">
-            Style(s):
-        </label>
+        <label for="form-colour">
+            Style(s) - MUST CHOOSE ONE:
+        </label><br>
           <?php echo displayAllColours($colours); ?>
       </div>
       <br>
-      <div>
-          <label for="grape">
-              Grape(s):
-          </label>
+      <div id="form-grapes">
+          <label for="form-grapes">
+              Grape(s)  - MUST CHOOSE ONE:
+          </label><br>
             <?php echo displayAllGrapes($grapes); ?>
       </div>
       <br>

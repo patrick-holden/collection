@@ -28,10 +28,6 @@ h2 {
   transition: all 1.5s ease-in-out 1s;
 }
 
-/*.h2 a:hover {*/
-/*  background-image: linear-gradient(270deg,#fcfcfd 0%,#fcfcfd 50%, #264de4 50%, #264de4 100%);*/
-/*}*/
-
 #test-flex {
   display: flex;
   flex-flow: row wrap;
@@ -56,8 +52,8 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
-  transition: all 0.15s ease-in-out 0s;
+  opacity: 0.85;
+
 }
 
 .content:hover .content-overlay {
@@ -74,20 +70,21 @@ h2 {
   padding-left: 1em;
   padding-right: 1em;
   width: 100%;
-  opacity: 0;
-  -webkit-transform: translate(-75%, 50%);
-  -moz-transform: translate(-75%, 50%);
-  transform: translate(-75%, 50%);
-  -webkit-transition: all 0.1s ease-out 0s;
-  -moz-transition: all 0.1s ease-out 0s;
-  transition: all 0.1s ease-out 0s;
+  opacity: 1;
+  top: 50%;
+  /*-webkit-transform: translate(-75%, 50%);*/
+  /*-moz-transform: translate(-75%, 50%);*/
+  /*transform: translate(-75%, 50%);*/
+  /*-webkit-transition: all 0.1s ease-out 0s;*/
+  /*-moz-transition: all 0.1s ease-out 0s;*/
+  /*transition: all 0.1s ease-out 0s;*/
 }
 
-.content:hover .content-details {
-  top:30%;
-  left: 75%;
-  opacity: 0.98;
-}
+/*.content:hover .content-details {*/
+/*  top:30%;*/
+/*  left: 75%;*/
+/*  opacity: 0.98;*/
+/*}*/
 
 .content-details h3 {
   color: #da5bda;
@@ -149,10 +146,12 @@ color: #ffffff;
 /* Styling form-control Radio
 button and Checkbox */
 
-li {
-  color: #ffc11f;
-  margin-right: 0rem;
-  margin-left: 1rem;
+#colour {
+  margin-right: 2rem;
+}
+
+#grape {
+  margin-right: 2rem;
 }
 
 /* Styling Button */
@@ -169,22 +168,9 @@ button {
   margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 700px) {
-  #test-flex {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 4rem;
-    justify-content: center;
-    border: 1px solid #ffffff;
-    margin-left: 5%;
-    padding-top: 2rem;
-  }
-
+@media only screen and (min-width: 650px) {
   .content {
-    position: relative;
     width: 40vw;
-    min-height: 500px;
-    object-fit: cover;
   }
 
   .content-overlay {
@@ -202,62 +188,40 @@ button {
     opacity: 1;
   }
 
-  .wine-image {
-    width: auto;
-    max-width: 100%;
-  }
-
   .content-details {
     position: absolute;
     padding-left: 1em;
     padding-right: 1em;
     width: 100%;
     opacity: 0;
-    -webkit-transform: translate(-75%, 0%);
-    -moz-transform: translate(-75%, 0%);
-    transform: translate(-75%, 0%);
-    -webkit-transition: all 0.1s ease-out 0s;
-    -moz-transition: all 0.1s ease-out 0s;
-    transition: all 0.1s ease-out 0s;
   }
 
   .content:hover .content-details {
     top:30%;
-    left: 75%;
-    opacity: 0.98;
+    left: 0%;
+    opacity: 1;
   }
 
   .content-details h3 {
-    color: #da5bda;
-    font-family: source sans pro, sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-    margin-bottom: 0rem;
     padding-top: 7.5rem;
-    padding-bottom: 0rem;
-    padding-right: 7.5rem;
-    text-align: left;
-    text-transform: uppercase;
   }
 
-  .content-details h4 {
-    font-family: source sans pro, sans-serif;
-    color: #ffc11f;
-    font-weight: 400;
-    font-size: 1.25rem;
-    text-align: left;
-    margin-top: 0.1rem;
+  form {
+    padding-right: 5rem;
   }
 
-  .content-details li {
-    list-style-type: none;
-    font-family: 'Roboto Slab', serif;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-align: left;
-    margin-left: -10%;
-    padding: 0;
+  #form-grapes {
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .content {
+    width: 25vw;
+  }
+
+  #form-grapes {
+    padding-right: 25%;
   }
 }
