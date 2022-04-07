@@ -2,7 +2,7 @@
 require_once 'db-access-funcs.php';
 
 $dB = 'vinoverodb';
-$connection = (connectToDb($dB));
+$connection = connectToDb($dB);
 
 function uploadFile(): string
 {
@@ -121,8 +121,8 @@ function addToDB($pdo, string $imageName)
     'INSERT INTO `junc_grape` (`wines_id`, `grape_id`)'
     . ' VALUES (:wineId, :existingGrapeId);'
   );
-
-  for ($i = 0; $i < count($_POST['grape']); $i++) {
+  if (isset($_POST['grape'])) {
+    for ($i = 0; $i < count($_POST['grape']); $i++) {
       $existingGrapeId = $_POST['grape'][$i];
 
       $query->execute([
@@ -130,6 +130,7 @@ function addToDB($pdo, string $imageName)
         'existingGrapeId' => $existingGrapeId,
       ]);
     }
+  }
 
   $query = $pdo->prepare(
     'INSERT INTO `junc_region` (`wines_id`, `region_id`)'
@@ -147,18 +148,18 @@ function addToDB($pdo, string $imageName)
     'INSERT INTO `junc_colour` (`wines_id`, `colour_id`)'
     . ' VALUES (:wineId, :existingColourId);'
   );
+  if (isset($_POST['colour'])) {
+    for ($i = 0; $i < count($_POST['colour']); $i++) {
 
-  for ($i = 0; $i < count($_POST['colour']); $i++) {
+      $existingColourId = $_POST['colour'][$i];
 
-    $existingColourId = $_POST['colour'][$i];
-
-    $query->execute([
-      'wineId' => $wineId,
-      'existingColourId' => $existingColourId,
-    ]);
+      $query->execute([
+        'wineId' => $wineId,
+        'existingColourId' => $existingColourId,
+      ]);
+    }
   }
 }
 
 addToDB($connection, $imageString);
 header('Location: index.php');
-?>

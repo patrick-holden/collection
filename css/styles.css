@@ -72,19 +72,7 @@ h2 {
   width: 100%;
   opacity: 1;
   top: 50%;
-  /*-webkit-transform: translate(-75%, 50%);*/
-  /*-moz-transform: translate(-75%, 50%);*/
-  /*transform: translate(-75%, 50%);*/
-  /*-webkit-transition: all 0.1s ease-out 0s;*/
-  /*-moz-transition: all 0.1s ease-out 0s;*/
-  /*transition: all 0.1s ease-out 0s;*/
 }
-
-/*.content:hover .content-details {*/
-/*  top:30%;*/
-/*  left: 75%;*/
-/*  opacity: 0.98;*/
-/*}*/
 
 .content-details h3 {
   color: #da5bda;
@@ -137,15 +125,6 @@ color: #ffffff;
   box-shadow: 2px 5px 10px;
 }
 
-/* Styling form-control Class */
-.form-control {
-  text-align: left;
-  margin-bottom: 25px;
-}
-
-/* Styling form-control Radio
-button and Checkbox */
-
 #colour {
   margin-right: 2rem;
 }
@@ -154,7 +133,6 @@ button and Checkbox */
   margin-right: 2rem;
 }
 
-/* Styling Button */
 button {
   background-color: #000000;
   color: #00ccff;
@@ -174,25 +152,11 @@ button {
   }
 
   .content-overlay {
-    background: #12879f;
-    position: absolute;
-    top: 50%;
-    bottom: 0;
-    left: 0;
-    right: 0;
     opacity: 0;
     transition: all 0.15s ease-in-out 0s;
   }
 
-  .content:hover .content-overlay {
-    opacity: 1;
-  }
-
   .content-details {
-    position: absolute;
-    padding-left: 1em;
-    padding-right: 1em;
-    width: 100%;
     opacity: 0;
   }
 

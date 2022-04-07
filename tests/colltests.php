@@ -90,5 +90,10 @@ class colltests extends TestCase
     //Act - calling the function
     $result = loopCollection($array);
   }
+
+  public function testEmptyColourArrayThrowError()
+  {
+
+  }
 }
 ?>

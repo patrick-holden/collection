@@ -24,17 +24,16 @@ function connectToDB(string $db): PDO
 }
 
 /**
-* @param PDO $dbConnection The database connection.
-* @param string $sql An SQL statement.
-* @param array|null $params [Optional] An associative array of parameters to
-*                           be bound to named parameters.
-* @return array Rows from the database.
-**/
+ * @param PDO $dbConnection The database connection.
+ * @param string $sql An SQL statement.
+ * @param array|null $params [Optional] An associative array of parameters to
+ *                           be bound to named parameters.
+ * @return array Rows from the database.
+ **/
 
 function fetchAll(PDO $dbConnection, string $sql, array $params = null): array
 {
   $query = $dbConnection->prepare($sql);
-
   $query->execute($params);
 
   return $query->fetchAll();
@@ -43,21 +42,21 @@ function fetchAll(PDO $dbConnection, string $sql, array $params = null): array
 function runSQL(PDO $dbConnection, string $sql, array $params = null): void
 {
   $query = $dbConnection->prepare($sql);
-
   $query->execute($params);
 }
 
 function fetchAllWines(PDO $dbConnection): array
 {
-  $sql = 'SELECT    `wines`.`id`,
-                    `wines`.`name`,
-                    `wines`.`blurb`,
-                    `wines`.`producer`,
-                    `wines`.`image`,
-                    `colour`.`colour`,
-                    `grape`.`grape`,
-                    `region_country`.`region`,
-                    `region_country`.`country`
+  $sql = 'SELECT
+            `wines`.`id`,
+            `wines`.`name`,
+            `wines`.`blurb`,
+            `wines`.`producer`,
+            `wines`.`image`,
+            `colour`.`colour`,
+            `grape`.`grape`,
+            `region_country`.`region`,
+            `region_country`.`country`
           FROM `wines`
             LEFT JOIN `junc_colour`
             ON `wines`.`id` = `junc_colour`.`wines_id`
@@ -103,5 +102,3 @@ function fetchAllRegions(PDO $dbConnection): array
 
   return fetchAll($dbConnection, $sql);
 }
-
-?>

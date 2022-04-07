@@ -60,7 +60,7 @@ function createArrayOfWineObjects(array $winesDb): array
 
       $currentId = $wine['id'];
       $wines[$currentId] = $wineObj;
-    } else {
+      } else {
       $currentWineColours = $wines[$currentId]->getColours();
       $inArray = in_array($wineColour, $currentWineColours);
       if (!$inArray) {
@@ -72,65 +72,68 @@ function createArrayOfWineObjects(array $winesDb): array
         $wines[$currentId]->addGrape($wineGrape);
       }
     }
-    }
-    return $wines;
   }
+  return $wines;
+}
 
-  function displayAllWines(array $wines): void
-  {
-    foreach ($wines as $wine) {
-//        print_r($wine);
-      echo '<div class="content">
-        <a href="" target="_blank">
-          <div class="content-overlay">
-          </div>
-          <img class="wine-image" alt="A bottle image of this wine" src="Images/' . $wine->getImage() . '"/>
-          <div class="content-details">
-            <h3>' . ucfirst($wine->getName()) . '</h3>
-            <h4>Producer:<br>' . ucfirst($wine->getProducer()) . '</h4>';
-      $colours = $wine->getColours();
-      $grapes = $wine->getGrapes();
-      echo '<ul>';
-      foreach ($colours as $colour) {
-        echo '<li>' . ucfirst($colour) . '</li>';
-      }
-      foreach ($grapes as $grape) {
-        echo '<li>' . ucfirst($grape) . '</li>';
-      }
-      echo '<li>' . $wine->getRegion() . ', ' . $wine->getCountry() . ' </li >
-            </ul >
-          </div >
-        </a >
-      </div > ';
-    }
-  }
-
-  function displayAllColours(array $colours): void
-  {
-//      print_r(ucfirst($colours["colour"]));
+function displayAllWines(array $wines): void
+{
+  foreach ($wines as $wine) {
+    echo '<div class="content">
+      <a href="" target="_blank">
+        <div class="content-overlay">
+        </div>
+        <img class="wine-image" alt="A bottle image of this wine" src="Images/' . $wine->getImage() . '"/>
+        <div class="content-details">
+          <h3>' . ucfirst($wine->getName()) . '</h3>
+          <h4>Producer:<br>' . ucfirst($wine->getProducer()) . '</h4>';
+    $colours = $wine->getColours();
+    $grapes = $wine->getGrapes();
+    echo '<ul>';
     foreach ($colours as $colour) {
-      echo '<label for="colour">' . ucfirst($colour["colour"]) . '</label>
-        <input name="colour[]" id="colour" type="checkbox" value="'
-        . $colour["id"] . '">';
+      echo '<li>' . ucfirst($colour) . '</li>';
     }
-  }
-
-  function displayAllGrapes(array $grapes): void
-  {
     foreach ($grapes as $grape) {
-
-      echo '<label for="grape">' . ucfirst($grape["grape"]) . '</label>
-        <input name="grape[]" id="grape" type="checkbox" value="'
-        . $grape["id"] . '">';
+      echo '<li>' . ucfirst($grape) . '</li>';
     }
+    echo '<li>' . $wine->getRegion() . ', ' . $wine->getCountry() . ' </li >
+          </ul >
+        </div >
+      </a >
+    </div > ';
   }
+}
 
-  function displayAllRegions(array $regions): void
-  {
-    foreach ($regions as $region) {
-      echo '<option value="'
-        . $region["id"] . '">' . ucfirst($region["region"]) . ', ' . ucfirst($region["country"]) . '</option>';
-    }
+function displayAllColours(array $colours): string
+{
+  $colourStr = '';
+  foreach ($colours as $colour) {
+    $colourStr .= '<label for="colour">' . ucfirst($colour["colour"]) . '</label>
+      <input name="colour[]" id="colour" type="checkbox" value="'
+      . $colour["id"] . '">';
   }
+  return $colourStr;
+}
 
-  ?>
+function displayAllGrapes(array $grapes): string
+{
+  $grapeStr = '';
+  foreach ($grapes as $grape) {
+    $grapeStr .= '<label for="grape">' . ucfirst($grape["grape"]) . '</label>
+      <input name="grape[]" id="grape" type="checkbox" value="'
+      . $grape["id"] . '">';
+  }
+  return $grapeStr;
+}
+
+function displayAllRegions(array $regions): string
+{
+  $regionStr = '';
+  foreach ($regions as $region) {
+    $regionStr .= '<option value="'
+      . $region["id"] . '">' . ucfirst($region["region"]) . ', ' . ucfirst($region["country"]) . '</option>';
+  }
+  return $regionStr;
+}
+
+?>

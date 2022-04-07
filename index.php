@@ -10,9 +10,7 @@ $wines = createArrayOfWineObjects($result);
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,23 +20,17 @@ $wines = createArrayOfWineObjects($result);
 </head>
 
 <body>
-<?php
-//echo '<pre>';
-//echo print_r($colours);
-//echo '</pre>';
-?>
   <section  id="panel">
     <h2>
-<!--      <a href="" target="_blank">-->
-        <span id="the">
-          Some
-        </span>
-        <br>
-        VinoVero
-        <br>
-        <span id="collected">
-          in a collection
-        </span>
+      <span id="the">
+        Some
+      </span>
+      <br>
+      VinoVero
+      <br>
+      <span id="collected">
+        in a collection
+      </span>
 <!--      </a>-->
     </h2>
     <div  id="test-flex">
@@ -47,53 +39,55 @@ $wines = createArrayOfWineObjects($result);
   </section>
 </body>
 <footer>
-    <br>
+  <br>
   <form id="form" action="add-to-db-func.php" method="post" enctype="multipart/form-data">
-      <div>
-        <label for="name">Wine name</label>
-        <input name="name" id="name" type="text">
-      </div>
+    <div>
+      <label for="name">Wine name</label>
+      <input name="name" id="name" type="text">
+    </div>
     <br>
-      <div>
-        <label for="blurb">Blurb</label>
-        <input name="blurb" id="blurb" type="text">
-      </div>
+    <div>
+      <label for="blurb">Blurb</label>
+      <input name="blurb" id="blurb" type="text">
+    </div>
     <br>
-      <div>
-        <label for="producer">Producer</label>
-        <input name="producer" id="producer" type="text">
-      </div>
+    <div>
+      <label for="producer">Producer</label>
+      <input name="producer" id="producer" type="text">
+    </div>
     <br>
-      <div>
-        <label for="image">Image file:</label>
-        <input type="file" name="newFile">
-      </div>
+    <div>
+      <label for="image">Image file:</label>
+      <input type="file" name="newFile">
+    </div>
+    <br>
+    <div>
+      <label for="form-colour">
+        Style(s) - MUST CHOOSE ONE:
+      </label>
       <br>
-      <div>
-        <label for="form-colour">
-            Style(s) - MUST CHOOSE ONE:
-        </label><br>
-          <?php echo displayAllColours($colours); ?>
-      </div>
+      <?php echo displayAllColours($colours); ?>
+    </div>
+    <br>
+    <div id="form-grapes">
+      <label for="form-grapes">
+        Grape(s)  - MUST CHOOSE ONE:
+      </label>
       <br>
-      <div id="form-grapes">
-          <label for="form-grapes">
-              Grape(s)  - MUST CHOOSE ONE:
-          </label><br>
-            <?php echo displayAllGrapes($grapes); ?>
-      </div>
-      <br>
-      <div>
-          <label for="region">
-          Region:
-        </label>
-          <select id="region" name="region">
-            <?php echo displayAllRegions($regions); ?>
-          </select>
-      </div>
-      <button>Submit</button>
-      </div>
-
+      <?php echo displayAllGrapes($grapes); ?>
+    </div>
+    <br>
+    <div>
+      <label for="region">
+        Region:
+      </label>
+      <select id="region" name="region">
+        <?php echo displayAllRegions($regions); ?>
+      </select>
+    </div>
+    <button>
+      Submit
+    </button>
   </form>
 </footer>
 </html>
