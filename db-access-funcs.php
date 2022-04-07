@@ -84,7 +84,6 @@ function fetchAllColours(PDO $dbConnection): array
   return fetchAll($dbConnection, $sql);
 }
 
-
 function fetchAllGrapes(PDO $dbConnection): array
 {
   $sql = 'SELECT `grape`.`id`, `grape`.`grape`

@@ -93,7 +93,6 @@ if (strpos(strtolower($imageString), 'success')) { // if the variable contains t
   $imageString = '';
 }
 
-
 function addToDB($pdo, string $imageName)
 {
 
@@ -106,7 +105,6 @@ function addToDB($pdo, string $imageName)
   $blurb = $_POST['blurb'];
   $producer = $_POST['producer'];
   $image = $imageName;
-
 
   $query->execute([
     'newName' => $name,

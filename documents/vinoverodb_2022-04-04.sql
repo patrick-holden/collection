@@ -36,13 +36,14 @@ LOCK TABLES `colour` WRITE;
 
 INSERT INTO `colour` (`id`, `colour`)
 VALUES
-	(1,'pink'),
-	(2,'orange'),
-	(3,'white'),
-	(4,'red'),
-	(5,'sweet'),
+	(1,'white'),
+	(2,'red'),
+	(3,'pink'),
+	(4,'orange'),
+	(5,'still'),
 	(6,'spritzy'),
 	(7,'cider');
+	 (8,'sweet');
 
 /*!40000 ALTER TABLE `colour` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -101,24 +102,28 @@ LOCK TABLES `junc_colour` WRITE;
 
 INSERT INTO `junc_colour` (`id`, `wines_id`, `colour_id`)
 VALUES
-	(1,1,3),
-	(2,2,2),
-	(3,3,3),
-	(4,4,4),
+	(1,1,1),
+	(2,2,4),
+	(3,3,1),
+	(4,4,2),
 	(5,4,6),
-	(6,5,3),
-	(7,6,4),
-	(8,7,1),
-	(9,8,4),
-	(10,9,4),
-	(11,10,4),
+	(6,5,1),
+	(7,6,2),
+	(8,7,3),
+	(9,8,2),
+	(10,9,2),
+	(11,10,2),
 	(12,11,7),
 	(13,12,5),
-	(14,13,4),
-	(15,14,2),
-	(16,15,1),
-	(17,16,1),
-	(18,17,7);
+	(14,13,2),
+	(15,14,4),
+	(16,15,3),
+	(17,16,3),
+	(18,17,5);
+	(18,17,5);
+    	(19,17,7);
+	(20,12,8);
+	(22,17,5);
 
 /*!40000 ALTER TABLE `junc_colour` ENABLE KEYS */;
 UNLOCK TABLES;

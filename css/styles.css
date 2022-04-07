@@ -53,7 +53,6 @@ h2 {
   left: 0;
   right: 0;
   opacity: 0.85;
-
 }
 
 .content:hover .content-overlay {
@@ -147,6 +146,7 @@ button {
 }
 
 @media only screen and (min-width: 650px) {
+
   .content {
     width: 40vw;
   }
