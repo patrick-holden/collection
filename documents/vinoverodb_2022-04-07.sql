@@ -262,7 +262,7 @@ LOCK TABLES `wines` WRITE;
 
 INSERT INTO `wines` (`id`, `name`, `blurb`, `producer`, `image`)
 VALUES
-	(1,'Aries Reisling 2017','Floral, creamy, impressivly taut riesling good enough to age','Bencze Birtok','BirtokAries.jpg'),
+	(1,'Aries Riesling 2017','Floral, creamy, impressivly taut riesling good enough to age','Bencze Birtok','BirtokAries.jpg'),
 	(2,'Tout Terriblement Maceration 2019','Classy gewurtz left on the skins','Domaine Brand','BrandTerriblement-3.jpg'),
 	(3,'Chardonnay 2018','Creamy, nutty, lightly oxidative Chardonnay from the Jura, with 6 month sous voile','Chevassu-Fassenet','ChevassuFassenetSousVoile2.jpg'),
 	(4,'Cinque Campi Rosso 2019','Spritzy blackcurrant party juice','Cinque Campi','CinqueCampo-2.jpg'),
